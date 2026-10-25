@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* Mobile optimization utilities */
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .safe-bottom {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+}
+
+@theme {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Cormorant Garamond', serif;
+  --color-wine: #6B1D2A;
+  --color-wine-dark: #4A0E1C;
+  --color-wine-light: #8B2E3F;
+  --color-gold: #C5993E;
+  --color-gold-light: #D4AD5E;
+  --color-gold-dark: #A07D2E;
+  --color-cream: #FBF5EB;
+  --color-cream-dark: #F0E6D0;
+  --color-olive: #5C6B3C;
+  --color-olive-light: #7A8B52;
+  --color-bark: #2C1810;
+  --color-bark-light: #4A3228;
+  --color-clay: #B86E4B;
+  --color-clay-light: #D4956F;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FBF5EB;
+  color: #2C1810;
+  overflow-x: hidden;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+@keyframes slide-in-left {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF5EB;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5993E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A07D2E;
+}
